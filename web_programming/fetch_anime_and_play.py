@@ -138,7 +138,7 @@ def get_anime_episode(episode_endpoint: str) -> list:
 
     response = requests.get(
         url=episode_page_url, headers={"User-Agent": UserAgent().chrome}
-    )
+    , timeout=30)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.text, "html.parser")
